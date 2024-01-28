@@ -39,7 +39,7 @@ import {
 
         await signInWithEmailAndPassword(auth, email, password);
 
-        toast.success('Signin successful! Redirecting to the Dashboard.');
+        toast.success('Signin Successful');
         setTimeout(() => {
             router.push('/dashboard');
         }, 2000);
