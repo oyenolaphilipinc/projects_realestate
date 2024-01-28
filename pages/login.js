@@ -23,6 +23,7 @@ import {
   import { Logo } from '../components/Logo'
   import { OAuthButtonGroup } from '../components/OAuthButtonGroup'
   import { PasswordField } from '../components/PasswordField'
+import Navbar from '../components/Navbar';
   
  const Login = () => {
     const [email, setEmail] = useState('');
@@ -51,6 +52,7 @@ import {
     };
     return(
         <>
+        <Navbar />
         <Toaster position="top-right" reverseOrder={false} />
         <form onSubmit={handleSignIn}>
         <Container

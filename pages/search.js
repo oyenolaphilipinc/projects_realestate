@@ -8,12 +8,15 @@ import Property from '../components/Property';
 import SearchFilters from '../components/SearchFilters';
 import { baseUrl, fetchApi } from '../utils/fetchApi';
 import noresult from '../assets/images/noresult.svg'
+import Navbar from '../components/Navbar';
 
 const Search = ({ properties }) => {
   const [searchFilters, setSearchFilters] = useState(false);
   const router = useRouter();
 
   return (
+    <>
+    <Navbar />
     <Box>
       <Flex
         onClick={() => setSearchFilters(!searchFilters)}
@@ -44,6 +47,7 @@ const Search = ({ properties }) => {
         </Flex>
       )}
     </Box>
+    </>
   );
 };
 

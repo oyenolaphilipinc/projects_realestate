@@ -1,9 +1,18 @@
-import React from 'react'
+import React from 'react';
+import { Flex } from '@chakra-ui/react';
+import Sidebar from '../components/Sidebar';
+import Navbar from '../components/UI/Navbar';
 
-const dashboard = () => {
+const Dashboard = () => {
   return (
-    <div>Dashboard for the admin</div>
-  )
-}
+    <Flex>
+      <Sidebar />
+      <Flex direction="column" ml="250px" p={4} w="100%">
+        <Navbar />
+        {/* Rest of your content goes here */}
+      </Flex>
+    </Flex>
+  );
+};
 
-export default dashboard
+export default Dashboard;
