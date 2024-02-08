@@ -17,20 +17,20 @@ import {
     Heading,
   } from "@chakra-ui/react";
   import { getAuth, signOut } from "firebase/auth";
+  import { auth } from "../utils/firebase"
   import { FiLogOut } from "react-icons/fi";
   import { useRouter } from "next/router";
   
   export default function LogoutModal() {
     const { isOpen, onOpen, onClose } = useDisclosure();
-    const navigate= useRouter()
+    const navigate = useRouter()
   
     const logout = async(e)=>{
       e.preventDefault()
       try {
-        const auth = getAuth();
         await signOut(auth);
         console.log('User signed out successfully.');
-        navigate('/login')
+        navigate.push('/login')
       } catch (error) {
         // An error happened.
         console.error('Sign-out error:', error.message);
@@ -70,7 +70,7 @@ import {
                 <Box alignSelf={"center"} mb={10} color={useColorModeValue("", "black")}>
                   {" "}
                   <Heading size={"md"} align={"center"} mx={10} mb={5}>
-                    You are attempting to logout of DigiMart
+                    You are attempting to logout of Rentals
                   </Heading>
                   <Text align={"center"}>Are you sure?</Text>
                 </Box>

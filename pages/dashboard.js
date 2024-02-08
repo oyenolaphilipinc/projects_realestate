@@ -1,17 +1,16 @@
 import React from 'react';
-import { Flex } from '@chakra-ui/react';
-import Sidebar from '../components/Sidebar';
-import Navbar from '../components/UI/Navbar';
+import { Button, Flex, Text } from '@chakra-ui/react';
+import SideBarFunc from '../components/Sidebar';
+import DashboardContent from '../components/DashboardContent';
 
 const Dashboard = () => {
   return (
-    <Flex>
-      <Sidebar />
-      <Flex direction="column" ml="250px" p={4} w="100%">
-        <Navbar />
-        {/* Rest of your content goes here */}
-      </Flex>
-    </Flex>
+    <div className="flex h-screen overflow-hidden">
+      <SideBarFunc />
+      <div className="flex-1">
+        <DashboardContent />
+      </div>
+    </div>
   );
 };
 
